@@ -1,0 +1,5 @@
+print("kamaljit Tripathy")
+print("9437521310")
+print("5.4")
+print(17)
+print("False")

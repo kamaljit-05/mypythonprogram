@@ -1,0 +1,10 @@
+nm="kamaljit Tripathy"
+mobno=9437521310
+hig=5.4
+age=17
+vote=False
+print("my name=",nm)
+print("mobile number=",mobno)
+print("height=",hig)
+print("Age=",age)
+print("vote=",vote)

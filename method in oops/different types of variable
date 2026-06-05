@@ -1,0 +1,370 @@
+different types of variable
+________________________________
+
+(1)local 
+(2)global
+(3)instance
+(4)class
+
+local variable
+___________________
+class Demo:
+    def __init__(self):
+        a=10
+        print("local variable=",a)
+    def show(self,b):
+        e=40
+        print("local or formal parameter =",b)
+def disp():
+    c=30
+    print("local varaiable =",c)
+ob=Demo()
+disp()
+ob.show(50)
+#print(a) error local varaiable outside the block
+#print(b)
+#print(c)
+
+global variable
+__________________
+a=10
+class Demo:
+    def __init__(self):
+        print("global  variable=",a)
+    def show(self,b):
+        global a
+        print("global variable =",a)
+        a=30
+def disp():
+    print("global varaiable =",a)
+ob=Demo()
+disp()
+
+ob.show(50)
+print(a) 
+a=50
+print(a)
+
+
+o/p:
+global  variable= 10
+global varaiable = 10
+global variable = 10
+30
+50
+
+
+
+
+a=10 # global variable  
+class Demo:
+    def __init__(self):
+        b=20  #local variable
+    def show(self,b):
+        c=30   #local variable
+ob=Demo()
+print(ob.__dict__)
+
+
+o/p:
+{  }
+
+
+
+instance variable 
+_________________
+a=10 # global variable  
+class Demo:
+    def __init__(self):
+        self.b=20  #instance variable
+    def show(self):
+        e=50
+        self.c=30   #instance variable
+ob=Demo()
+print(ob.__dict__)
+ob.show()
+print(ob.__dict__)
+ob.d=40
+print(ob.__dict__)
+
+
+o/p:
+{'b': 20}
+{'b': 20, 'c': 30}
+{'b': 20, 'c': 30, 'd': 40}
+
+we can create instance variable any location 
+
+
+
+per object per instance variable
+______________________________
+a=10 # global variable  
+class Demo:
+    def __init__(self):
+        self.b=20  #instance variable
+    def show(self):
+        self.c=30   #instance variable
+ob=Demo()
+print(ob.__dict__)
+ob.show()
+print(ob.__dict__)
+ob.d=40
+print(ob.__dict__)
+ob1=Demo()
+print(ob1.__dict__)
+ob1.x=50
+print(ob1.__dict__)
+
+o/p:
+{'b': 20}
+{'b': 20, 'c': 30}
+{'b': 20, 'c': 30, 'd': 40}
+{'b': 20}
+{'b': 20, 'x': 50}
+
+
+class variable:
+
+
+
+class Demo:
+    a=10   #class variable
+    def __init__(self):
+        self.b=20  #instance variable
+    def show(self):
+        self.c=30   #instance variable
+ob=Demo()
+print(ob.__dict__)
+ob.show()
+print(ob.__dict__)
+print(Demo.__dict__)
+
+o/P:
+{'b': 20}
+{'b': 20, 'c': 30}
+{'__module__': '__main__', 'a': 10, '__init__': <function Demo.__init__ at 0x0000026D64CAD300>, 'show': <function Demo.show at 0x0000026D64CAD120>, '__dict__': <attribute '__dict__' of 'Demo' objects>, '__weakref__': <attribute '__weakref__' of 'Demo' objects>, '__doc__': None}
+
+
+
+
+
+
+
+
+
+class Demo:
+    a=10   #class variable
+    def __init__(self):
+        self.b=20  #instance variable
+        g=90 #local variable
+    def show(self):
+        self.c=30   #instance variable
+ob=Demo()
+#print(ob.__dict__)  #{ 'b': 20}
+ob.show()
+#print(ob.__dict__)  #('b':20 ,'c':30')
+#print(Demo.__dict__) #{extra  ,'a':10}
+print(ob.b,ob.c,ob.a,Demo.a)
+#print(g)  local variabl   not acess outside
+
+
+o/p:
+20 30 10 10
+
+ equvalient java code 
+ __________________________
+class Demo {
+    static int a = 10; // class variable
+    int b;             // instance variable
+    int c;             // instance variable (assigned in show)
+
+    Demo() {
+        b = 20;
+        int g = 90; // local variable, only accessible in constructor
+    }
+
+    void show() {
+        c = 30; // instance variable
+    }
+
+    public static void main(String[] args) {
+        Demo ob = new Demo();
+        ob.show();
+
+        System.out.println(ob.b + " " + ob.c + " " + ob.a + " " + Demo.a);
+        // or optionally with labels:
+        // System.out.println("b=" + ob.b + " c=" + ob.c + " a=" + ob.a + " Demo.a=" + Demo.a);
+    }
+}
+
+class Demo:
+    a=10   #class variable
+    def __init__(self):
+        self.b=20  #instance variable
+        g=90 #local variable
+    def show(self):
+        self.c=30   #instance variable
+ob=Demo()
+#print(ob.__dict__)  #{ 'b': 20}
+ob.show()
+#print(ob.__dict__)  #('b':20 ,'c':30')
+#print(Demo.__dict__) #{extra  ,'a':10}
+print(ob.b,ob.c,ob.a,Demo.a)  #20 30 10 10
+print(ob.__dict__) #('b':20 ,'c':30')
+ob.a=50
+print(ob.__dict__) #('b':20 ,'c':30','a:50)
+print(ob.a,Demo.a) #50 10
+Demo.a=70
+print(ob.a,Demo.a) #50 10
+
+o/p:
+20 30 10 10
+{'b': 20, 'c': 30}
+{'b': 20, 'c': 30, 'a': 50}
+50 10
+50 70
+
+
+
+
+class Demo:
+    a = 10
+    def __init__(self):
+        self.b = 20  # instance variable
+
+    def show(self):
+        self.c = 30  # instance variable
+
+ob = Demo()
+ob.show()
+ob.d = 40  # dynamically added attribute
+print(ob.b, ob.c, ob.d)
+
+o/p:
+20 30 40 
+
+❗ Key Points:
+b is initialized in __init__
+
+c is initialized in show()
+
+d is dynamically added to the object after creation — this is possible in Python, but not allowed in Java (Java doesn't allow adding new attributes dynamically to an object after it's created).
+
+class Demo {
+    int b; // instance variable
+    int c; // instance variable
+    int d; // extra variable manually added in Java
+
+    Demo() {
+        b = 20;
+    }
+
+    void show() {
+        c = 30;
+    }
+
+    public static void main(String[] args) {
+        Demo ob = new Demo();
+        ob.show();
+        ob.d = 40;  // in Java, you must define this field in the class
+
+        System.out.println(ob.b + " " + ob.c + " " + ob.d);
+    }
+}
+
+
+
+differnence between instance variable and class variable
+__________________________________________________
+class Demo:
+    a=10 
+    def __init__(self):
+        self.b=20  #instance variable
+ob1=Demo()
+ob2=Demo()
+print(ob1.a,ob1.b) # 10 20
+print(ob2.a,ob2.b) # 10 20
+ob1.b=30
+ob2.b=40
+Demo.a=50
+print(ob1.a,ob1.b) # 50 30
+print(ob2.a,ob2.b) # 50 40
+
+
+
+o/p:
+10 20
+10 20
+50 30
+50 40
+
+
+
+class Demo:
+    a=10 
+    def __init__(self):
+        self.b=20  #instance variable
+ob1=Demo()
+ob2=Demo()
+print(ob1.a,ob1.b) # 10 20
+print(ob2.a,ob2.b) # 10 20
+ob1.a=30
+ob2.b=40
+Demo.a=50
+print(ob1.a,ob1.b) # 30 20
+print(ob2.a,ob2.b) #50 40
+
+o/p:
+10 20
+10 20
+30 20
+50 40
+
+
+# count no of object 
+
+class Demo:
+    c=0# class variable
+    def __init__(self):
+        Demo.c=Demo.c+1
+ob1=Demo()
+ob2=Demo()
+ob3=Demo()
+L=[Demo(),Demo(),Demo()]
+print("no of object=",Demo.c)
+
+
+o/P;
+no of object=6
+
+
+
+class Demo:
+    c=0# class variable
+    def __init__(self):
+        Demo.c=1
+        self.a=1
+    def update(self):
+        Demo.c=Demo.c+1
+        self.a=self.a+1
+    def show(self):
+        print(self.a,Demo.c)
+d=Demo()
+d1=Demo()
+d2=Demo()
+d.update()
+d1.update()
+d2.update()
+d.show()
+d1.show()
+d2.show()
+
+
+C:\Users\LENOVO\OneDrive\Desktop\pythonbiki>py p.py
+2 4
+2 4
+2 4
+
+
+https://chatgpt.com/share/6878f21c-f254-8008-8b72-d9730f613602

@@ -1,0 +1,1 @@
+print("kamaljit\b\b\b\b\b\b\b\b\babcd")

@@ -1,0 +1,2 @@
+import mymodule
+help(mymodule)

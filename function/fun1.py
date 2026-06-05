@@ -1,0 +1,10 @@
+def show():
+	print("A")
+	print("B")
+	print("c")
+show()
+print("D")
+show()
+print("E")
+show()
+print("F")

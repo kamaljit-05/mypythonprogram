@@ -1,0 +1,12 @@
+L=[10,5,7,6]
+try:
+	print(L[4]/0)
+except IndexError:
+	print("index error")
+except ZeroDivisionError:
+	print("zero division error")
+except:
+	print("it handel all error")
+print("program end")
+
+	
