@@ -10,6 +10,3 @@ class Child(Parent):
 obj = Child()
 obj.show()
 obj.display()
-
-
-
