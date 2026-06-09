@@ -1,6 +1,6 @@
 #right angled triangle pattern in python
-rows= int(input("enter the row size for pattern"))
-for i in range (1,rows+1): #outer loop for rows
-	for j in range(1,i+1): #inner loop for colums
-		print("*",end=" ") #print *
+rows= int(input("Enter the row size for the pattern"))
+for i in range (1,rows+1,1):
+	for j in range(1,i+1,1):
+		print("*",end=" ")
 	print()
