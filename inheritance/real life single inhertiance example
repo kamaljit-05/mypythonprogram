@@ -1,7 +1,7 @@
 real life single inhertiance example 
 _________________________________________
 
-# Parent class
+# Parent  class
 class Person:
     def __init__(self, name, age):
         self._name = name       # Protected variable (by convention)
@@ -74,11 +74,6 @@ ________
 MRO (Method Resolution Order) is the order in which Python looks for a method or attribute in a hierarchy of classes when you call a method on an object.
 
 It is especially important in multiple inheritance scenarios, where a class can inherit from more than one class.
-
-
-class A:
-    def show(self):
-        print("A")
 
 class B(A):
     def show(self):
