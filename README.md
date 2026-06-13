@@ -24,11 +24,9 @@ This repository contains my Python learning journey, projects, practice programs
   <li>Python Basics</li>
   <li>Object-Oriented Programming</li>
   <li>File Handling</li>
-  <li>NumPy</li>
+  <li>inheritance</li>
   <li>Pandas</li>
-  <li>Matplotlib</li>
-  <li>Web Development</li>
-  <li>Automation</li>
+  <li>looping</li>
 </ul>
 
 <h2>💻 Sample Code</h2>
