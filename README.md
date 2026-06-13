@@ -1,23 +1,45 @@
-<p align="center">
-  <img src="python-banner.svg" width="100%">
+<div align="center">
+
+<img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" width="220">
+
+<h1>Python</h1>
+
+<p>
+Programming • Automation • Data Science • AI
 </p>
 
-<h1 align="center">🐍 Python Developer Journey</h1>
+</div>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-Expert-blue?logo=python">
-  <img src="https://img.shields.io/badge/Open%20Source-Contributor-yellow">
-  <img src="https://img.shields.io/badge/Learning-AI-green">
+<hr>
+
+<h2>🚀 About</h2>
+
+<p>
+This repository contains my Python learning journey, projects, practice programs, and notes.
 </p>
 
----
+<h2>📚 Topics</h2>
 
-### Skills
+<ul>
+  <li>Python Basics</li>
+  <li>Object-Oriented Programming</li>
+  <li>File Handling</li>
+  <li>NumPy</li>
+  <li>Pandas</li>
+  <li>Matplotlib</li>
+  <li>Web Development</li>
+  <li>Automation</li>
+</ul>
 
-```python
-skills = {
-    "Languages": ["Python", "SQL"],
-    "Libraries": ["NumPy", "Pandas", "Matplotlib"],
-    "Web": ["Flask", "Django"],
-    "Tools": ["Git", "GitHub"]
-}
+<h2>💻 Sample Code</h2>
+
+<pre>
+<code>
+print("Hello, Python!")
+</code>
+</pre>
+
+<h2>📊 Status</h2>
+
+<img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
+<img src="https://img.shields.io/badge/Status-Learning-success">
